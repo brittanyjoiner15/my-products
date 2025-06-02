@@ -6,7 +6,8 @@
       "description": "A comprehensive Trello template for annual goal setting and tracking.",
       "price": 29.99,
       "image": "annual",
-      "link": "https://trello.substack.com/"
+      "link": "https://trello.substack.com/",
+      "tags": ["planning", "productivity", "goals"]
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "description": "Keep your family organized with this intuitive Trello system.",
       "price": 29.99,
       "image": "family",
-      "link": "https://trello.substack.com/"
+      "link": "https://trello.substack.com/",
+      "tags": ["family", "organization", "household"]
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "description": "Make your next move stress-free with this detailed Trello template.",
       "price": 29.99,
       "image": "moving",
-      "link": "https://trello.substack.com/"
+      "link": "https://trello.substack.com/",
+      "tags": ["moving", "planning", "organization"]
     }
   ]
 }

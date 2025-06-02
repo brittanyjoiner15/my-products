@@ -1,5 +1,7 @@
+import { useState, useMemo } from 'react'
 import ProductCard from './components/ProductCard.jsx'
 import TestimonialCard from './components/TestimonialCard.jsx'
+import TagFilter from './components/TagFilter.jsx'
 import './App.css'
 import productsData from './data/products.json'
 import testimonialsData from './data/testimonials.json'
@@ -19,6 +21,32 @@ const images = {
 }
 
 function App() {
+  const [selectedTags, setSelectedTags] = useState([])
+
+  // Get unique tags from all products
+  const allTags = useMemo(() => {
+    const tagSet = new Set()
+    productsData.products.forEach(product => {
+      product.tags?.forEach(tag => tagSet.add(tag))
+    })
+    return Array.from(tagSet).sort()
+  }, [])
+
+  // Filter products based on selected tags
+  const filteredProducts = useMemo(() => {
+    if (selectedTags.length === 0) return productsData.products
+    return productsData.products.filter(product =>
+      product.tags?.some(tag => selectedTags.includes(tag))
+    )
+  }, [selectedTags])
+
+  const handleTagToggle = (tag) => {
+    setSelectedTags(prev =>
+      prev.includes(tag)
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    )
+  }
 
   return (
     <>
@@ -29,18 +57,25 @@ function App() {
           {/* <button className="cta-button">Explore templates</button> */}
         </div>
       </section>
-      <div className="product-list">
-        {productsData.products.map(product => (
-          <ProductCard
-            key={product.id}
-            image={images[product.image]}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            onButtonClick={() => window.open(product.link, '_blank')}
-          />
-        ))}
-      </div>
+      <section className="product-section">
+        <TagFilter
+          tags={allTags}
+          selectedTags={selectedTags}
+          onTagToggle={handleTagToggle}
+        />
+        <div className="product-list">
+          {filteredProducts.map(product => (
+            <ProductCard
+              key={product.id}
+              image={images[product.image]}
+              title={product.title}
+              description={product.description}
+              price={product.price}
+              onButtonClick={() => window.open(product.link, '_blank')}
+            />
+          ))}
+        </div>
+      </section>
 
       <section className="testimonials-section">
         <div className="testimonials-grid">
