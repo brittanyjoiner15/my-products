@@ -4,6 +4,7 @@ import TestimonialCard from './components/TestimonialCard.jsx'
 import TagFilter from './components/TagFilter.jsx'
 import SearchBar from './components/SearchBar'
 import Footer from './components/Footer'
+import AboutMe from './components/AboutMe'
 import './App.css'
 import productsData from './data/products.json'
 import testimonialsData from './data/testimonials.json'
@@ -104,6 +105,7 @@ function App() {
           ))}
         </div>
       </section>
+      <AboutMe image={images.britt} />
       <Footer />
     </>
   )
