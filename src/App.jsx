@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import ProductCard from './components/ProductCard.jsx'
 import TestimonialCard from './components/TestimonialCard.jsx'
 import TagFilter from './components/TagFilter.jsx'
+import SearchBar from './components/SearchBar.jsx'
 import './App.css'
 import productsData from './data/products.json'
 import testimonialsData from './data/testimonials.json'
@@ -22,6 +23,7 @@ const images = {
 
 function App() {
   const [selectedTags, setSelectedTags] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
 
   // Get unique tags from all products
   const allTags = useMemo(() => {
@@ -32,13 +34,14 @@ function App() {
     return Array.from(tagSet).sort()
   }, [])
 
-  // Filter products based on selected tags
+  // Filter products based on selected tags and search query
   const filteredProducts = useMemo(() => {
-    if (selectedTags.length === 0) return productsData.products
-    return productsData.products.filter(product =>
-      product.tags?.some(tag => selectedTags.includes(tag))
-    )
-  }, [selectedTags])
+    return productsData.products.filter(product => {
+      const matchesTags = selectedTags.length === 0 || product.tags?.some(tag => selectedTags.includes(tag))
+      const matchesSearch = searchQuery === '' || product.title.toLowerCase().includes(searchQuery.toLowerCase())
+      return matchesTags && matchesSearch
+    })
+  }, [selectedTags, searchQuery])
 
   const handleTagToggle = (tag) => {
     setSelectedTags(prev =>
@@ -58,6 +61,10 @@ function App() {
         </div>
       </section>
       <section className="product-section">
+        <SearchBar
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+        />
         <TagFilter
           tags={allTags}
           selectedTags={selectedTags}

@@ -207,6 +207,41 @@
 }
 
 
+.search-bar {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
 .tag-filter {
   max-width: 1200px;
   width: 100%;
