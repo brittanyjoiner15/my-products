@@ -1,0 +1,25 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "role": "Project Manager",
+      "quote": "These Trello templates have completely transformed how our team manages projects. The pre-built structure saved us hours of setup time.",
+      "avatar": "britt"
+    },
+    {
+      "id": 2,
+      "name": "Mike Chen",
+      "role": "Small Business Owner",
+      "quote": "I've tried many organization systems, but this Trello setup is by far the most intuitive and effective. It's helped me stay on top of everything.",
+      "avatar": "britt"
+    },
+    {
+      "id": 3,
+      "name": "Emily Rodriguez",
+      "role": "Freelance Designer",
+      "quote": "The family organization template has been a game-changer for managing household tasks and schedules. My family is finally on the same page!",
+      "avatar": "britt"
+    }
+  ]
+}

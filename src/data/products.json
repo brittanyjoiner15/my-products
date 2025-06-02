@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Annual Planning Template",
+      "description": "A comprehensive Trello template for annual goal setting and tracking.",
+      "price": 29.99,
+      "image": "annual",
+      "link": "https://trello.substack.com/"
+    },
+    {
+      "id": 2,
+      "title": "Family Organization System",
+      "description": "Keep your family organized with this intuitive Trello system.",
+      "price": 29.99,
+      "image": "family",
+      "link": "https://trello.substack.com/"
+    },
+    {
+      "id": 3,
+      "title": "Moving Planner",
+      "description": "Make your next move stress-free with this detailed Trello template.",
+      "price": 29.99,
+      "image": "moving",
+      "link": "https://trello.substack.com/"
+    }
+  ]
+}

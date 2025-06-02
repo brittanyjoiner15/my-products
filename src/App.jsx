@@ -1,14 +1,24 @@
-import { useState } from 'react'
 import ProductCard from './components/ProductCard.jsx'
 import TestimonialCard from './components/TestimonialCard.jsx'
 import './App.css'
+import productsData from './data/products.json'
+import testimonialsData from './data/testimonials.json'
+
+// Import images
 import annual from './imgs/annual.png'
 import family from './imgs/family.png'
 import moving from './imgs/moving.png'
 import britt from './imgs/britt.jpg'
 
+// Image mapping
+const images = {
+  annual,
+  family,
+  moving,
+  britt
+}
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -20,49 +30,29 @@ function App() {
         </div>
       </section>
       <div className="product-list">
-        <ProductCard
-          image={annual}
-          title="Sample Product"
-          description="This is a sample product description."
-          price={29.99}
-          onButtonClick={() => window.open('https://trello.substack.com/', '_blank')}
-        />
-        <ProductCard
-          image={family}
-          title="Sample Product"
-          description="This is a sample product description."
-          price={29.99}
-          onButtonClick={() => window.open('https://trello.substack.com/', '_blank')}
-        />
-        <ProductCard
-          image={moving}
-          title="Sample Product"
-          description="This is a sample product description."
-          price={29.99}
-          onButtonClick={() => window.open('https://trello.substack.com/', '_blank')}
-        />
+        {productsData.products.map(product => (
+          <ProductCard
+            key={product.id}
+            image={images[product.image]}
+            title={product.title}
+            description={product.description}
+            price={product.price}
+            onButtonClick={() => window.open(product.link, '_blank')}
+          />
+        ))}
       </div>
 
       <section className="testimonials-section">
         <div className="testimonials-grid">
-          <TestimonialCard
-            name="Sarah Johnson"
-            role="Project Manager"
-            quote="These Trello templates have completely transformed how our team manages projects. The pre-built structure saved us hours of setup time."
-            avatar={britt}
-          />
-          <TestimonialCard
-            name="Mike Chen"
-            role="Small Business Owner"
-            quote="I've tried many organization systems, but this Trello setup is by far the most intuitive and effective. It's helped me stay on top of everything."
-            avatar={britt}
-          />
-          <TestimonialCard
-            name="Emily Rodriguez"
-            role="Freelance Designer"
-            quote="The family organization template has been a game-changer for managing household tasks and schedules. My family is finally on the same page!"
-            avatar={britt}
-          />
+          {testimonialsData.testimonials.map(testimonial => (
+            <TestimonialCard
+              key={testimonial.id}
+              name={testimonial.name}
+              role={testimonial.role}
+              quote={testimonial.quote}
+              avatar={images[testimonial.avatar]}
+            />
+          ))}
         </div>
       </section>
     </>
