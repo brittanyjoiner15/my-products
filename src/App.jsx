@@ -69,7 +69,7 @@ function App() {
         </div>
       </section>
       <section className="product-section">
-        <SearchBar
+        {/* <SearchBar
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
         />
@@ -77,7 +77,7 @@ function App() {
           tags={allTags}
           selectedTags={selectedTags}
           onTagToggle={handleTagToggle}
-        />
+        /> */}
         <div className="product-list">
           {filteredProducts.map(product => (
             <ProductCard
