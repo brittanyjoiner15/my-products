@@ -10,7 +10,7 @@ const ProductCard = ({ image, title, description, price, onButtonClick, tags }) 
         <div className="product-card-footer">
             <span className="product-card-price">${price}</span>
             <button className="product-card-button" onClick={onButtonClick}>
-                Learn More
+                Purchase now
             </button>
         </div>
     </div>

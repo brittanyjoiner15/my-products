@@ -4,28 +4,38 @@
       "id": 1,
       "title": "Annual Planning Template",
       "description": "A comprehensive Trello template for annual goal setting and tracking.",
-      "price": 29.99,
+      "price": 4.99,
       "image": "annual",
-      "link": "https://trello.substack.com/",
-      "tags": ["planning", "productivity", "goals"]
+      "link": "https://buy.stripe.com/00g5o6c9P4qB3JK6oL",
+      "tags": [
+        "planning",
+        "personal"
+      ]
     },
     {
       "id": 2,
       "title": "Family Organization System",
       "description": "Keep your family organized with this intuitive Trello system.",
-      "price": 29.99,
+      "price": 4.99,
       "image": "family",
-      "link": "https://trello.substack.com/",
-      "tags": ["family", "organization", "household"]
+      "link": "https://buy.stripe.com/7sYeVd1li8uN9Nu4FMe7m0o",
+      "tags": [
+        "family",
+        "personal"
+      ]
     },
     {
       "id": 3,
       "title": "Moving Planner",
       "description": "Make your next move stress-free with this detailed Trello template.",
-      "price": 29.99,
+      "price": 4.99,
       "image": "moving",
       "link": "https://trello.substack.com/",
-      "tags": ["moving", "planning", "organization"]
+      "tags": [
+        "event",
+        "personal",
+        "project"
+      ]
     }
   ]
 }

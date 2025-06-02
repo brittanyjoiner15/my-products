@@ -2,24 +2,24 @@
   "testimonials": [
     {
       "id": 1,
-      "name": "Sarah Johnson",
-      "role": "Project Manager",
-      "quote": "These Trello templates have completely transformed how our team manages projects. The pre-built structure saved us hours of setup time.",
-      "avatar": "britt"
+      "name": "Erika Storli",
+      "role": "Project Marketing, Trello",
+      "quote": "As a Senior Product Marketing Manager at Trello, I’m incredibly grateful for Brittany Joiner’s deep insights and actionable tips to effectively use Trello and help users succeed.",
+      "avatar": "erika"
     },
     {
       "id": 2,
-      "name": "Mike Chen",
-      "role": "Small Business Owner",
-      "quote": "I've tried many organization systems, but this Trello setup is by far the most intuitive and effective. It's helped me stay on top of everything.",
-      "avatar": "britt"
+      "name": "Meryl van der Merwe",
+      "role": "Educator, Funda Funda Academy",
+      "quote": "Brittany has a gift for showing you how to make Trello work for real life - whether you're planning a vacation, keeping track of Christmas shopping, or managing team projects at work. She finds smart ways to use Trello that most people wouldn't think of, and explains them in a way that just clicks. What I appreciate most is how she breaks down Trello's features into steps that make sense.",
+      "avatar": "meryl"
     },
     {
       "id": 3,
-      "name": "Emily Rodriguez",
-      "role": "Freelance Designer",
-      "quote": "The family organization template has been a game-changer for managing household tasks and schedules. My family is finally on the same page!",
-      "avatar": "britt"
+      "name": "Vy Tran",
+      "role": "Attorney, DCFS",
+      "quote": "These Trello templates are a game changer! They don’t just showcase Trello’s powerful features—they give you ready-made systems to organize everything from work projects to everyday life. I’ve always recommended Trello to friends and colleagues, and now I highly recommend they start with these templates!",
+      "avatar": "vy"
     }
   ]
 }

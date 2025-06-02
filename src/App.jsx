@@ -12,13 +12,19 @@ import annual from './imgs/annual.png'
 import family from './imgs/family.png'
 import moving from './imgs/moving.png'
 import britt from './imgs/britt.jpg'
+import erika from './imgs/erika.jpeg'
+import meryl from './imgs/meryl.jpeg'
+import vy from './imgs/vy.jpeg'
 
 // Image mapping
 const images = {
   annual,
   family,
   moving,
-  britt
+  britt,
+  erika,
+  meryl,
+  vy
 }
 
 function App() {
