@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Uncomment if you need specific Ruby version
+# [build.environment]
+#   RUBY_VERSION = "3.4.3"
