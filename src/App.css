@@ -1,26 +1,67 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .hero {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: white;
-  padding: 4rem 2rem;
-  margin: -2rem -2rem 2rem -2rem;
+  padding: 3rem 1rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
 }
 
 .hero-content {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 }
 
 .hero h1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: bold;
   margin-bottom: 1rem;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   line-height: 1.2;
 }
 
@@ -28,6 +69,9 @@
   font-size: 1.25rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .cta-button {
@@ -52,11 +96,26 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  width: 100%;
   max-width: 300px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    padding: 12px;
+  }
+
+  .product-card-title {
+    font-size: 1.1rem;
+  }
+
+  .product-card-description {
+    font-size: 0.9rem;
+  }
 }
 
 .product-card:hover {
@@ -137,13 +196,35 @@
 }
 
 .product-section {
-  padding: 2rem;
+  padding: 2rem 1rem;
+  width: 100%;
 }
+
+@media (max-width: 768px) {
+  .product-section {
+    padding: 1rem 0.5rem;
+  }
+}
+
 
 .tag-filter {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto 2rem auto;
   text-align: center;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .tag-filter {
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .tag-filter-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
 }
 
 .tag-filter-title {
@@ -155,9 +236,23 @@
 .tag-filter-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   justify-content: center;
+  width: 100%;
 }
+
+@media (max-width: 768px) {
+  .tag-filter-options {
+    gap: 6px;
+  }
+
+  .tag-filter-button {
+    padding: 4px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+
 
 .tag-filter-button {
   background-color: #f3f4f6;
@@ -188,6 +283,19 @@
   padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    gap: 16px;
+    padding: 0.5rem;
+  }
+
+  .product-list .product-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 .product-list .product-card {
@@ -196,24 +304,35 @@
   box-sizing: border-box;
 }
 
+/* Testimonials Section */
+.testimonials-section {
+  padding: 4rem 1rem;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
-  .product-list .product-card {
-    flex: 0 1 100%;
+  .testimonials-section {
+    padding: 2rem 0.5rem;
   }
 }
 
-/* Testimonials Section */
-.testimonials-section {
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
-}
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
 }
 
 .testimonial-card {
@@ -222,6 +341,25 @@
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 1.25rem;
+  }
+
+  .testimonial-quote {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+  }
+
+  .testimonial-role {
+    font-size: 0.85rem;
+  }
 }
 
 .testimonial-card:hover {
