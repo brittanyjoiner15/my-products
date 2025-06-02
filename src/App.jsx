@@ -2,7 +2,8 @@ import { useState, useMemo } from 'react'
 import ProductCard from './components/ProductCard.jsx'
 import TestimonialCard from './components/TestimonialCard.jsx'
 import TagFilter from './components/TagFilter.jsx'
-import SearchBar from './components/SearchBar.jsx'
+import SearchBar from './components/SearchBar'
+import Footer from './components/Footer'
 import './App.css'
 import productsData from './data/products.json'
 import testimonialsData from './data/testimonials.json'
@@ -103,6 +104,7 @@ function App() {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   )
 }
