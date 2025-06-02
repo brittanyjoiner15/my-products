@@ -63,7 +63,7 @@ function App() {
     <>
       <section className="hero">
         <div className="hero-content">
-          <h1>Stop Winging It. Start With a Proven Trello System.</h1>
+          <h1>Stop Winging It.<h1>Start With a Proven Trello System.</h1></h1>
           <p>Why build from scratch when you can plug into a system that already works? With over a decade of experience using Trello for everything from team ops to personal projects, I’ve created templates that help real people get organized fast—and stay that way.</p>
           {/* <button className="cta-button">Explore templates</button> */}
         </div>
