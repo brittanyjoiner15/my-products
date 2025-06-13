@@ -1,113 +1,96 @@
-import { useState, useMemo } from 'react'
-import ProductCard from './components/ProductCard.jsx'
-import TestimonialCard from './components/TestimonialCard.jsx'
-import TagFilter from './components/TagFilter.jsx'
-import SearchBar from './components/SearchBar'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import AboutMe from './components/AboutMe'
+import Templates from './pages/Templates'
 import './App.css'
-import productsData from './data/products.json'
-import testimonialsData from './data/testimonials.json'
-
-// Import images
-import annual from './imgs/annual.png'
-import family from './imgs/family.png'
-import moving from './imgs/moving.png'
 import britt from './imgs/britt.jpg'
-import erika from './imgs/erika.jpeg'
-import meryl from './imgs/meryl.jpeg'
-import vy from './imgs/vy.jpeg'
-
-// Image mapping
-const images = {
-  annual,
-  family,
-  moving,
-  britt,
-  erika,
-  meryl,
-  vy
-}
 
 function App() {
-  const [selectedTags, setSelectedTags] = useState([])
-  const [searchQuery, setSearchQuery] = useState('')
-
-  // Get unique tags from all products
-  const allTags = useMemo(() => {
-    const tagSet = new Set()
-    productsData.products.forEach(product => {
-      product.tags?.forEach(tag => tagSet.add(tag))
-    })
-    return Array.from(tagSet).sort()
-  }, [])
-
-  // Filter products based on selected tags and search query
-  const filteredProducts = useMemo(() => {
-    return productsData.products.filter(product => {
-      const matchesTags = selectedTags.length === 0 || product.tags?.some(tag => selectedTags.includes(tag))
-      const matchesSearch = searchQuery === '' || product.title.toLowerCase().includes(searchQuery.toLowerCase())
-      return matchesTags && matchesSearch
-    })
-  }, [selectedTags, searchQuery])
-
-  const handleTagToggle = (tag) => {
-    setSelectedTags(prev =>
-      prev.includes(tag)
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
-    )
-  }
-
-  return (
+  const HomePage = () => (
     <>
       <section className="hero">
         <div className="hero-content">
-          <h1>Stop Winging It.<h1>Start With a Proven Trello System.</h1></h1>
-          <p>Why build from scratch when you can plug into a system that already works? With over a decade of experience using Trello for everything from team ops to personal projects, I’ve created templates that help real people get organized fast—and stay that way.</p>
-          {/* <button className="cta-button">Explore templates</button> */}
-        </div>
-      </section>
-      <section className="product-section">
-        {/* <SearchBar
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-        />
-        <TagFilter
-          tags={allTags}
-          selectedTags={selectedTags}
-          onTagToggle={handleTagToggle}
-        /> */}
-        <div className="product-list">
-          {filteredProducts.map(product => (
-            <ProductCard
-              key={product.id}
-              image={images[product.image]}
-              title={product.title}
-              description={product.description}
-              price={product.price}
-              onButtonClick={() => window.open(product.link, '_blank')}
-            />
-          ))}
+          <h1>Your Hub for Everything Trello</h1>
+          <p>Whether you're a user looking for templates, a developer seeking support, or a brand exploring partnerships - find everything you need in one place.</p>
+          <div className="hero-buttons">
+            <Link to="/templates" className="cta-button">Explore Templates</Link>
+            <a href="#services" className="cta-button cta-button-outline">View Services</a>
+          </div>
         </div>
       </section>
 
-      <section className="testimonials-section">
-        <div className="testimonials-grid">
-          {testimonialsData.testimonials.map(testimonial => (
-            <TestimonialCard
-              key={testimonial.id}
-              name={testimonial.name}
-              role={testimonial.role}
-              quote={testimonial.quote}
-              avatar={images[testimonial.avatar]}
-            />
-          ))}
+      <section className="features-section">
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">🎯</div>
+            <h3>Products</h3>
+            <p>Ready-to-use Trello templates and proven systems for teams, projects, and personal productivity.</p>
+            <Link to="/templates" className="feature-link">Browse Templates →</Link>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🤝</div>
+            <h3>Experts</h3>
+            <p>From building your boards, to coaching your workflows, to training your teams, these experts offer personalized support on your Trello journey.</p>
+            <a href="#consulting" className="feature-link">Learn More →</a>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">💻</div>
+            <h3>Community</h3>
+            <p>You're not the only one working in Trello. Connect with enthusiasts for ideas and continuous improvement.</p>
+            <a href="#developer" className="feature-link">View Resources →</a>
+          </div>
         </div>
       </section>
-      <AboutMe image={images.britt} />
-      <Footer />
+
+      <section className="services-section" id="services">
+        <div className="services-content">
+          <h2>How We Can Help</h2>
+          <div className="services-grid">
+            <div className="service-item">
+              <h3>For Users</h3>
+              <ul>
+                <li>Ready-made templates</li>
+                <li>Workflow guides</li>
+                <li>Video tutorials</li>
+                <li>Best practices</li>
+              </ul>
+            </div>
+            <div className="service-item">
+              <h3>For Developers</h3>
+              <ul>
+                <li>API documentation</li>
+                <li>Code examples</li>
+                <li>Integration guides</li>
+                <li>Custom solutions</li>
+              </ul>
+            </div>
+            <div className="service-item">
+              <h3>For Brands</h3>
+              <ul>
+                <li>Partnership opportunities</li>
+                <li>Custom development</li>
+                <li>Team training</li>
+                <li>Consulting services</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <AboutMe image={britt} />
     </>
+  )
+
+  return (
+    <BrowserRouter>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/templates" element={<Templates />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
 
