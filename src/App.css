@@ -889,6 +889,91 @@
   }
 }
 
+/* About Us Section */
+.about-us-section {
+  padding: 5rem 1rem;
+  background: #f8fafc;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-4px);
+}
+
+.team-member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  object-fit: cover;
+}
+
+.team-member-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 0.5rem;
+}
+
+.team-member-tagline {
+  color: #4a5568;
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #0077b5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.linkedin-button:hover {
+  background-color: #005885;
+}
+
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 3rem 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .team-member-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-member-name {
+    font-size: 1.25rem;
+  }
+}
+
 /* Footer */
 .footer {
   background-color: #f8f9fa;

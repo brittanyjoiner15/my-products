@@ -1,4 +1,12 @@
 import { Link } from 'react-router-dom'
+import john from '../imgs/john.jpeg'
+import tarryn from "../imgs/tarryn.jpeg"
+import britt from "../imgs/britt.jpg"
+
+// Image mapping
+const images = {
+    tarryn, john, britt
+}
 
 function Developers() {
     return (
@@ -92,6 +100,47 @@ function Developers() {
                                 <li>Opportunities to be featured in user channels</li>
                             </ul>
                             <Link to="/templates" className="cta-button">View Success Stories</Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="about-us-section">
+                <div className="section-content">
+                    <h2>Meet The Crew</h2>
+                    <div className="team-grid">
+                        <div className="team-member-card">
+                            <img src={tarryn}
+                                alt="Tarryn-Anne Anderson"
+                                className="team-member-photo"
+                            />
+                            <h3 className="team-member-name">Tarryn-Anne Anderson</h3>
+                            <p className="team-member-tagline">Content ops, customer journeys, onboarding & retention.</p>
+                            <a href="https://www.linkedin.com/in/tarrynandersonattwell/" className="linkedin-button" target="_blank" rel="noopener noreferrer">
+                                Connect on LinkedIn
+                            </a>
+                        </div>
+                        <div className="team-member-card">
+                            <img src={john}
+                                alt="Jon Attwell"
+                                className="team-member-photo"
+                            />
+                            <h3 className="team-member-name">Jon Attwell</h3>
+                            <p className="team-member-tagline">Go-to-market strategy, positioning, tracking, growth.</p>
+                            <a href="https://www.linkedin.com/in/jonattwell/" className="linkedin-button" target="_blank" rel="noopener noreferrer">
+                                Connect on LinkedIn
+                            </a>
+                        </div>
+                        <div className="team-member-card">
+                            <img src={britt}
+                                alt="Britt Joiner"
+                                className="team-member-photo"
+                            />
+                            <h3 className="team-member-name">Brittany Joiner</h3>
+                            <p className="team-member-tagline">Product feedback, content creation and delivery, Trello community leader</p>
+                            <a href="https://www.linkedin.com/in/brittanysjoiner/" className="linkedin-button" target="_blank" rel="noopener noreferrer">
+                                Connect on LinkedIn
+                            </a>
                         </div>
                     </div>
                 </div>
