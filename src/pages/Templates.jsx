@@ -81,29 +81,30 @@ function Templates() {
                 <div className="product-layout">
                     <aside className="product-sidebar">
                         <div className="filters-container">
-                            <TagFilter
-                                tags={allTags}
-                                selectedTags={selectedTags}
-                                onTagToggle={handleTagToggle}
-                            />
                             <TypeFilter
                                 types={allTypes}
                                 selectedType={selectedType}
                                 onTypeChange={handleTypeChange}
                             />
+                            <TagFilter
+                                tags={allTags}
+                                selectedTags={selectedTags}
+                                onTagToggle={handleTagToggle}
+                            />
+
                         </div>
                     </aside>
                     <div className="product-list">
-                    {filteredProducts.map(product => (
-                        <ProductCard
-                            key={product.id}
-                            image={images[product.image]}
-                            title={product.title}
-                            description={product.description}
-                            price={product.price}
-                            onButtonClick={() => window.open(product.link, '_blank')}
-                        />
-                    ))}
+                        {filteredProducts.map(product => (
+                            <ProductCard
+                                key={product.id}
+                                image={images[product.image]}
+                                title={product.title}
+                                description={product.description}
+                                price={product.price}
+                                onButtonClick={() => window.open(product.link, '_blank')}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>
