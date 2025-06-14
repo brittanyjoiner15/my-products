@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react'
 
-function ExpertCard({ expert }) {
-    const [avatarUrl, setAvatarUrl] = useState(null)
+// Import images
+import laura from '../imgs/laura.png'
+import mike from '../imgs/mike.png'
+import alicia from '../imgs/alicia.png'
 
-    useEffect(() => {
-        // Dynamically import the image
-        import(`../imgs/${expert.avatar}`)
-            .then(module => setAvatarUrl(module.default))
-            .catch(err => console.error('Error loading expert avatar:', err))
-    }, [expert.avatar])
+// Image mapping
+const images = {
+    laura,
+    mike,
+    alicia
+}
+
+function ExpertCard({ expert }) {
+
     const renderStars = (rating) => {
         return "★".repeat(Math.floor(rating)) + "☆".repeat(5 - Math.floor(rating))
     }
@@ -17,7 +22,7 @@ function ExpertCard({ expert }) {
         <div className="expert-card">
             <div className="expert-header">
                 <div className="expert-badge">{expert.title}</div>
-                <img src={avatarUrl} alt={expert.name} className="expert-avatar" />
+                <img src={images[expert.avatar]} alt={expert.name} className="expert-avatar" />
                 <h3 className="expert-name">{expert.name}</h3>
                 <div className="expert-status">Based in {expert.location}</div>
             </div>

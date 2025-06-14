@@ -11,7 +11,7 @@ export const expertsData = {
             rating: 5.0,
             reviews: 200,
             tags: ["Automation", "Zaps", "Integration"],
-            avatar: "laura.png",
+            avatar: "laura",
             location: "Europe",
             contact: "mailto:laura.s.holton@mac.com"
         },
@@ -24,7 +24,7 @@ export const expertsData = {
             rating: 5.0,
             reviews: 149,
             tags: ["AI", "APIs", "No-Code"],
-            avatar: "mike.png",
+            avatar: "mike",
             location: "Americas",
             contact: "https://www.dreamsuite.app/"
         },
@@ -37,7 +37,7 @@ export const expertsData = {
             rating: 4.9,
             reviews: 395,
             tags: ["Fixes", "Development", "Support"],
-            avatar: "alicia.png",
+            avatar: "alicia",
             location: "Europe",
             contact: "https://organizateconmigo.com/"
         }
