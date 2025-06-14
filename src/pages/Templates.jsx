@@ -78,19 +78,22 @@ function Templates() {
                     searchQuery={searchQuery}
                     onSearchChange={setSearchQuery}
                 />
-                <div className="filters-container">
-                    <TagFilter
-                        tags={allTags}
-                        selectedTags={selectedTags}
-                        onTagToggle={handleTagToggle}
-                    />
-                    <TypeFilter
-                        types={allTypes}
-                        selectedType={selectedType}
-                        onTypeChange={handleTypeChange}
-                    />
-                </div>
-                <div className="product-list">
+                <div className="product-layout">
+                    <aside className="product-sidebar">
+                        <div className="filters-container">
+                            <TagFilter
+                                tags={allTags}
+                                selectedTags={selectedTags}
+                                onTagToggle={handleTagToggle}
+                            />
+                            <TypeFilter
+                                types={allTypes}
+                                selectedType={selectedType}
+                                onTypeChange={handleTypeChange}
+                            />
+                        </div>
+                    </aside>
+                    <div className="product-list">
                     {filteredProducts.map(product => (
                         <ProductCard
                             key={product.id}
@@ -101,6 +104,7 @@ function Templates() {
                             onButtonClick={() => window.open(product.link, '_blank')}
                         />
                     ))}
+                    </div>
                 </div>
             </section>
         </>
