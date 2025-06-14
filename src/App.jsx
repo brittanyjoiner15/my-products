@@ -3,6 +3,7 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import AboutMe from './components/AboutMe'
 import Templates from './pages/Templates'
+import Experts from './pages/Experts'
 import AnimatedText from './components/AnimatedText'
 import './App.css'
 import britt from './imgs/britt.jpg'
@@ -89,6 +90,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/templates" element={<Templates />} />
+        <Route path="/experts" element={<Experts />} />
       </Routes>
       <Footer />
     </BrowserRouter>

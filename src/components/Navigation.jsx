@@ -7,20 +7,20 @@ function Navigation() {
                 <div className="nav-content">
                     <NavLink to="/" className="nav-brand">Trello Together</NavLink>
                     <ul className="nav-links">
-                        {/* <li>
-                            <NavLink
-                                to="/"
-                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                            >
-                                Home
-                            </NavLink>
-                        </li> */}
                         <li>
                             <NavLink
                                 to="/templates"
                                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                             >
                                 Templates
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/experts"
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                            >
+                                Experts
                             </NavLink>
                         </li>
                     </ul>
