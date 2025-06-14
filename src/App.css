@@ -1312,3 +1312,27 @@
     padding: 1rem;
   }
 }
+
+.apply-expert-section {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.apply-expert-button {
+  background-color: #0052CC;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apply-expert-button:hover {
+  background-color: #0747A6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

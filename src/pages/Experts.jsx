@@ -87,6 +87,14 @@ function Experts() {
                     <ExpertCard key={expert.id} expert={expert} />
                 ))}
             </div>
+            <div className="apply-expert-section">
+                <button
+                    className="apply-expert-button"
+                    onClick={() => window.location.href = 'https://forms.fillout.com/t/oqMoPyxoptus'}
+                >
+                    Apply to be an expert
+                </button>
+            </div>
         </div>
     )
 }
