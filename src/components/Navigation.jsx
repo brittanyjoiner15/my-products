@@ -23,6 +23,14 @@ function Navigation() {
                                 Experts
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/developers"
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                            >
+                                Developers
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
