@@ -12,7 +12,7 @@ function Navigation() {
                         <img src={ttlogo} alt="Trello Together Logo" className="nav-logo" />
                         <span>Trello Together</span>
                     </NavLink>
-                    <button 
+                    <button
                         className="hamburger-button"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-label="Toggle menu"
@@ -25,10 +25,10 @@ function Navigation() {
                     <ul className={`nav-links ${isMenuOpen ? 'nav-open' : ''}`}>
                         <li>
                             <NavLink
-                                to="/templates"
+                                to="/toolbox"
                                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                             >
-                                Templates
+                                Toolbox
                             </NavLink>
                         </li>
                         <li>

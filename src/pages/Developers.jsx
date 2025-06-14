@@ -16,8 +16,8 @@ function Developers() {
                     <h1>You Built It. We’ll Help It Take Off.</h1>
                     <p>You’ve nailed the dev work. Now let’s grow your user base, refine your roadmap, and turn your Power-Up into a thriving product—with strategy, content, user insights, and more.</p>
                     <div className="hero-buttons">
-                        <a href="https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/" className="cta-button" target="_blank" rel="noopener noreferrer">Get Started</a>
-                        <Link to="/templates" className="cta-button cta-button-outline">View Examples</Link>
+                        <a href="https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/" className="cta-button" target="_blank" rel="noopener noreferrer">Let's Chat</a>
+                        <Link to="/toolbox" className="cta-button cta-button-outline">List Your Product</Link>
                     </div>
                 </div>
             </section>
@@ -99,7 +99,7 @@ function Developers() {
                                 <li>Help setting up monetization and pricing that makes sense for your product</li>
                                 <li>Opportunities to be featured in user channels</li>
                             </ul>
-                            <Link to="/templates" className="cta-button">View Success Stories</Link>
+                            <Link to="/toolbox" className="cta-button">View Success Stories</Link>
                         </div>
                     </div>
                 </div>

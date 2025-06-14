@@ -7,6 +7,7 @@
       "price": 4.99,
       "image": "annual",
       "link": "https://buy.stripe.com/00g5o6c9P4qB3JK6oL",
+      "type": "template",
       "tags": [
         "planning",
         "personal"
@@ -18,6 +19,7 @@
       "description": "Keep your family organized with this intuitive Trello system.",
       "price": 4.99,
       "image": "family",
+      "type": "template",
       "link": "https://buy.stripe.com/7sYeVd1li8uN9Nu4FMe7m0o",
       "tags": [
         "family",
@@ -30,6 +32,7 @@
       "description": "Make your next move stress-free with this detailed Trello template.",
       "price": 4.99,
       "image": "moving",
+      "type": "template",
       "link": "https://trello.substack.com/",
       "tags": [
         "event",

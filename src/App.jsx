@@ -17,7 +17,7 @@ function App() {
           <h1>Your Hub for Everything Trello</h1>
           <p>Whether you're a user looking for templates, a developer seeking support, or a brand exploring partnerships - find everything you need in one place.</p>
           <div className="hero-buttons">
-            <Link to="/templates" className="cta-button">Explore Templates</Link>
+            <Link to="/toolbox" className="cta-button">Explore Templates</Link>
             <Link to="/experts" className="cta-button cta-button-outline">Get an Expert</Link>
           </div>
         </div>
@@ -29,7 +29,7 @@ function App() {
             <div className="feature-icon">🎯</div>
             <h3>Products</h3>
             <p>Ready-to-use Trello templates and proven systems for teams, projects, and personal productivity.</p>
-            <Link to="/templates" className="feature-link">Browse Templates →</Link>
+            <Link to="/toolbox" className="feature-link">Browse Templates →</Link>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🤝</div>
@@ -90,7 +90,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/templates" element={<Templates />} />
+        <Route path="/toolbox" element={<Templates />} />
         <Route path="/experts" element={<Experts />} />
         <Route path="/developers" element={<Developers />} />
       </Routes>
