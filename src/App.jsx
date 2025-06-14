@@ -41,7 +41,7 @@ function App() {
             <div className="feature-icon">💻</div>
             <h3>Community</h3>
             <p>You built it, let's help them come. Get support plugging into a product with 1mm users.</p>
-            <a href="https://trello.substack.com/account" className="feature-link">Connect With Users →</a>
+            <Link to="/developers" className="feature-link">Grow Your Power-Up →</Link>
           </div>
         </div>
       </section>
