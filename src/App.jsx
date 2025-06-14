@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import AboutMe from './components/AboutMe'
 import Templates from './pages/Templates'
 import Experts from './pages/Experts'
+import Developers from './pages/Developers'
 import AnimatedText from './components/AnimatedText'
 import './App.css'
 import britt from './imgs/britt.jpg'
@@ -40,7 +41,7 @@ function App() {
             <div className="feature-icon">💻</div>
             <h3>Community</h3>
             <p>You built it, let's help them come. Get support plugging into a product with 1mm users.</p>
-            <a href="https://trello.substack.com/account" className="feature-link">Connect With Users →</a>
+            <Link to="/developers" className="feature-link">Grow Your Power-Up →</Link>
           </div>
         </div>
       </section>
@@ -91,6 +92,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/templates" element={<Templates />} />
         <Route path="/experts" element={<Experts />} />
+        <Route path="/developers" element={<Developers />} />
       </Routes>
       <Footer />
     </BrowserRouter>
