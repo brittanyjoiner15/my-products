@@ -29,11 +29,12 @@
 }
 
 .nav-brand {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
   transition: color 0.2s ease;
+  letter-spacing: 0.5px;
 }
 
 .nav-brand:hover {
@@ -42,7 +43,7 @@
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -51,37 +52,34 @@
 .nav-link {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: width 0.2s ease;
+.nav-link.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
+
+
 
 .nav-link:hover {
   color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.nav-link:hover::after {
-  width: 100%;
-}
+
 
 .nav-link.active {
   color: white;
 }
 
-.nav-link.active::after {
-  width: 100%;
-}
+
 
 .hero {
   background: linear-gradient(135deg, #0052CC 0%, #0065FF 100%);
@@ -263,6 +261,24 @@
   font-size: 2.5rem;
   margin-bottom: 3rem;
   text-align: center;
+}
+
+/* Animated Text Styles */
+.animated-word {
+  display: inline-block;
+  min-width: 120px;
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-word.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-word.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 .services-grid {

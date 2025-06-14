@@ -1,31 +1,27 @@
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 function Navigation() {
     return (
         <nav className="main-nav">
             <div className="nav-container">
                 <div className="nav-content">
-                    <Link to="/" className="nav-brand">Trello Together</Link>
+                    <NavLink to="/" className="nav-brand">Trello Together</NavLink>
                     <ul className="nav-links">
-                        <li>
-                            <Link
+                        {/* <li>
+                            <NavLink
                                 to="/"
-                                className={({ isActive }) =>
-                                    `nav-link ${isActive ? 'active' : ''}`
-                                }
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                             >
                                 Home
-                            </Link>
-                        </li>
+                            </NavLink>
+                        </li> */}
                         <li>
-                            <Link
+                            <NavLink
                                 to="/templates"
-                                className={({ isActive }) =>
-                                    `nav-link ${isActive ? 'active' : ''}`
-                                }
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                             >
                                 Templates
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>

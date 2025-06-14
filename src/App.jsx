@@ -3,6 +3,7 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import AboutMe from './components/AboutMe'
 import Templates from './pages/Templates'
+import AnimatedText from './components/AnimatedText'
 import './App.css'
 import britt from './imgs/britt.jpg'
 
@@ -45,33 +46,33 @@ function App() {
 
       <section className="services-section" id="services">
         <div className="services-content">
-          <h2>How We Can Help</h2>
+          <h2>🚀 Get the <AnimatedText words={['Boost', 'Support', 'Training', 'Growth']} /> You Need</h2>
           <div className="services-grid">
             <div className="service-item">
               <h3>For Users</h3>
               <ul>
                 <li>Ready-made templates</li>
-                <li>Workflow guides</li>
-                <li>Video tutorials</li>
-                <li>Best practices</li>
+                <li>Content & courses</li>
+                <li>Consulting & training</li>
+                <li>Custom solutions</li>
               </ul>
             </div>
             <div className="service-item">
               <h3>For Developers</h3>
               <ul>
-                <li>API documentation</li>
-                <li>Code examples</li>
-                <li>Integration guides</li>
-                <li>Custom solutions</li>
+                <li>Market research</li>
+                <li>Content creation</li>
+                <li>Growth consulting</li>
+                <li>Connect with users</li>
               </ul>
             </div>
             <div className="service-item">
-              <h3>For Brands</h3>
+              <h3>For Experts</h3>
               <ul>
-                <li>Partnership opportunities</li>
-                <li>Custom development</li>
-                <li>Team training</li>
-                <li>Consulting services</li>
+                <li>Client referrals</li>
+                <li>Affiliate Programs</li>
+                <li>Product Collabs</li>
+                <li>Guest content</li>
               </ul>
             </div>
           </div>
