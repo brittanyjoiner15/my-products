@@ -39,8 +39,8 @@ function App() {
           <div className="feature-card">
             <div className="feature-icon">💻</div>
             <h3>Community</h3>
-            <p>You're not the only one working in Trello. Connect with enthusiasts for ideas and continuous improvement.</p>
-            <a href="https://trello.substack.com/account" className="feature-link">Join the Community →</a>
+            <p>You built it, let's help them come. Get support plugging into a product with 1mm users.</p>
+            <a href="https://trello.substack.com/account" className="feature-link">Connect With Users →</a>
           </div>
         </div>
       </section>
