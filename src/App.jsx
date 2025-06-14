@@ -17,7 +17,7 @@ function App() {
           <p>Whether you're a user looking for templates, a developer seeking support, or a brand exploring partnerships - find everything you need in one place.</p>
           <div className="hero-buttons">
             <Link to="/templates" className="cta-button">Explore Templates</Link>
-            <a href="#services" className="cta-button cta-button-outline">View Services</a>
+            <Link to="/experts" className="cta-button cta-button-outline">Get an Expert</Link>
           </div>
         </div>
       </section>
@@ -34,13 +34,13 @@ function App() {
             <div className="feature-icon">🤝</div>
             <h3>Experts</h3>
             <p>From building your boards, to coaching your workflows, to training your teams, these experts offer personalized support on your Trello journey.</p>
-            <a href="#consulting" className="feature-link">Learn More →</a>
+            <Link to="/experts" className="feature-link">Get Dedicated Help →</Link>
           </div>
           <div className="feature-card">
             <div className="feature-icon">💻</div>
             <h3>Community</h3>
             <p>You're not the only one working in Trello. Connect with enthusiasts for ideas and continuous improvement.</p>
-            <a href="#developer" className="feature-link">View Resources →</a>
+            <a href="https://trello.substack.com/account" className="feature-link">Join the Community →</a>
           </div>
         </div>
       </section>

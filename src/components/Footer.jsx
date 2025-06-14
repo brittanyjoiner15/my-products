@@ -19,7 +19,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="footer-button"
           >
-            📕 Get my book
+            📕 Get the Trello book
           </a>
         </div>
         <div className="footer-social">
