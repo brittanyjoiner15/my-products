@@ -23,7 +23,7 @@ const fetchCustomFields = async (boardId) => {
     const fieldMap = customFields.reduce((acc, field) => {
         // Remove underscore prefix but preserve case
         const fieldName = field.name.replace(/^_/, '');
-        console.log(`Field ${field.name} is of type ${field.type} with options:`, field.options);
+
         acc[fieldName] = {
             id: field.id,
             type: field.type,
@@ -31,7 +31,7 @@ const fetchCustomFields = async (boardId) => {
         };
         return acc;
     }, {});
-    console.log('Complete field map:', fieldMap);
+
     return fieldMap;
 };
 
@@ -118,19 +118,11 @@ export const fetchExpertsFromTrelloList = async (listId) => {
         // Map Trello cards to expert format
         const formattedExperts = await Promise.all(cardsWithFields.map(async card => {
             // Create a map of custom field values
-            console.log('Processing card:', card.name);
-            console.log('Custom fields map:', customFieldsMap);
-            console.log('Card custom fields:', card.customFields);
-
             const customFieldPromises = (card.customFields || []).map(async field => {
-                console.log('Processing field:', field);
                 const fieldDef = Object.values(customFieldsMap).find(def => def.id === field.idCustomField);
-                console.log('Found field definition:', fieldDef);
                 if (fieldDef) {
                     const fieldName = Object.keys(customFieldsMap).find(key => customFieldsMap[key].id === field.idCustomField);
-                    console.log('Field name:', fieldName);
                     const value = await getCustomFieldValue(field, fieldDef);
-                    console.log('Field value:', value);
                     return [fieldName, value];
                 }
                 return null;
@@ -138,7 +130,6 @@ export const fetchExpertsFromTrelloList = async (listId) => {
 
             const customFieldEntries = await Promise.all(customFieldPromises);
             const customFieldValues = Object.fromEntries(customFieldEntries.filter(entry => entry !== null));
-            console.log('Final custom field values:', customFieldValues);
 
             return {
                 id: card.id,
@@ -148,7 +139,7 @@ export const fetchExpertsFromTrelloList = async (listId) => {
                 description: customFieldValues.description.length > 270 ? customFieldValues.description.substring(0, 267) + '...' : customFieldValues.description,
                 rating: customFieldValues.rating || 5.0,
                 reviews: customFieldValues.reviews || 0,
-                tags: card.labels.map(label => label.name),
+                tags: card.labels.filter(label => label.name).map(label => label.name),
                 avatar: customFieldValues.avatar || "default",
                 location: customFieldValues.locationDropdown || "Unknown",
                 contact: customFieldValues.contact || card.url

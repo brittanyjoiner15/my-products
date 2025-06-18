@@ -27,7 +27,6 @@ export const getExpertsData = async (listId) => {
         const experts = await fetchExpertsFromTrelloList(listId);
         return { experts };
     } catch (error) {
-        console.warn('Failed to fetch Trello data, using static data:', error);
         return staticExpertsData;
     }
 };
