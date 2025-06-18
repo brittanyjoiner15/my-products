@@ -540,6 +540,7 @@
   margin: 0 auto 1.5rem auto;
   text-align: center;
   padding: 0 1rem;
+  padding-top: 24px;
 }
 
 .search-input {
@@ -561,6 +562,7 @@
   .search-bar {
     margin-bottom: 1rem;
     padding: 0 0.5rem;
+    padding-top: 24px;
   }
 
   .search-input {
@@ -663,6 +665,8 @@
   font-size: 1.2rem;
   color: #2d3748;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .tag-filter-options {
@@ -1230,6 +1234,60 @@
   margin: 0;
 }
 
+/* Loading Spinner Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+  grid-column: 1 / -1;
+  /* Make it span all columns */
+}
+
+.loading-spinner {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.spinner-segment {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0052CC;
+  animation: bounce 0.8s infinite ease-in-out;
+}
+
+.spinner-segment:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.spinner-segment:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1.0);
+  }
+}
+
+.loading-text {
+  color: #42526E;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
 /* Experts Page Styles */
 .experts-grid {
   display: grid;
@@ -1238,6 +1296,8 @@
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  justify-items: center;
+  align-items: start;
 }
 
 .expert-card {
@@ -1308,17 +1368,21 @@
 
 .expert-footer {
   margin-top: auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   position: relative;
   padding-top: 1rem;
   border-top: 1px solid #f0f0f0;
 }
 
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .contact-button {
-  align-self: center;
-  justify-self: end;
   background-color: #0052CC;
   color: white;
   border: none;
@@ -1365,12 +1429,17 @@
   font-size: 0.9rem;
 }
 
+.expert-tags-container {
+  width: 100%;
+}
+
 .expert-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-  max-width: 70%;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .expert-tag {
