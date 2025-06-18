@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react'
-import { expertsData } from '../data/experts'
+import { useState, useMemo, useEffect } from 'react'
+import { getExpertsData } from '../data/experts'
 import ExpertCard from '../components/ExpertCard'
 
 // Import images
@@ -15,13 +15,29 @@ const images = {
 }
 
 function Experts() {
+    const [experts, setExperts] = useState([])
     const [selectedTags, setSelectedTags] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const loadExperts = async () => {
+            try {
+                const data = await getExpertsData('6851e599db4e4c46de7b9e36');
+                setExperts(data.experts);
+            } catch (error) {
+                console.error('Error loading experts:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        loadExperts();
+    }, [])
 
     // Get unique tags from all experts
     const allTags = useMemo(() => {
         const tagSet = new Set()
-        expertsData.experts.forEach(expert => {
+        experts.forEach(expert => {
             expert.tags?.forEach(tag => tagSet.add(tag))
         })
         return Array.from(tagSet).sort()
@@ -29,7 +45,7 @@ function Experts() {
 
     // Filter experts based on selected tags and search query
     const filteredExperts = useMemo(() => {
-        return expertsData.experts.filter(expert => {
+        return experts.filter(expert => {
             const matchesTags = selectedTags.length === 0 || expert.tags?.some(tag => selectedTags.includes(tag))
             const matchesSearch = searchQuery === '' ||
                 expert.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -81,11 +97,17 @@ function Experts() {
                     ))}
                 </div>
             </div> */}
-
+            {/* TODO: Replace with filtered experts when i add back in search and tags*/}
             <div className="experts-grid">
-                {filteredExperts.map(expert => (
-                    <ExpertCard key={expert.id} expert={expert} />
-                ))}
+                {loading ? (
+                    <div>Loading experts...</div>
+                ) : experts.length > 0 ? (
+                    experts.map(expert => (
+                        <ExpertCard key={expert.id} expert={expert} />
+                    ))
+                ) : (
+                    <div>No experts found</div>
+                )}
             </div>
             <div className="apply-expert-section">
                 <button

@@ -1,4 +1,7 @@
-export const expertsData = {
+import { fetchExpertsFromTrelloList } from '../utils/trelloApi';
+
+// Fallback data in case Trello API is not configured
+export const staticExpertsData = {
     experts: [
         // Each expert's avatar path is relative to the src/imgs directory
         // These will be dynamically imported in the ExpertCard component
@@ -14,32 +17,20 @@ export const expertsData = {
             avatar: "laura",
             location: "Europe",
             contact: "mailto:laura.s.holton@mac.com"
-        },
-        {
-            id: 2,
-            name: "Mike Day",
-            title: "Dreamsuite",
-            status: "Americas",
-            description: "Butler automation, business systems (CRM, ERP, Project management software), Digital marketing, website development, real estate & brokering, eCommerce, product development",
-            rating: 5.0,
-            reviews: 149,
-            tags: ["AI", "APIs", "No-Code"],
-            avatar: "mike",
-            location: "Americas",
-            contact: "https://www.dreamsuite.app/"
-        },
-        {
-            id: 3,
-            name: "Alicia Filíu Birlanga",
-            title: "Organízate Conmigo",
-            status: "Accepting new clients",
-            description: "Using Trello to creative effective structure, both at personal and team level, based on personal organization habits and methods such as GTD. Focus on small teams less than 10 people.",
-            rating: 4.9,
-            reviews: 395,
-            tags: ["Fixes", "Development", "Support"],
-            avatar: "alicia",
-            location: "Europe",
-            contact: "https://organizateconmigo.com/"
         }
     ]
-}
+};
+
+// Function to get experts data from Trello
+export const getExpertsData = async (listId) => {
+    try {
+        const experts = await fetchExpertsFromTrelloList(listId);
+        return { experts };
+    } catch (error) {
+        console.warn('Failed to fetch Trello data, using static data:', error);
+        return staticExpertsData;
+    }
+};
+
+// For backwards compatibility
+export const expertsData = staticExpertsData;
